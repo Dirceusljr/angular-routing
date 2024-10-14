@@ -17,18 +17,9 @@ import { UsersService } from '../users.service';
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
 })
-export class UserTasksComponent implements OnInit {
+export class UserTasksComponent {
   userId = input.required<string>();
   userName = input.required<string>();
-  private activatedRoute = inject(ActivatedRoute)
-
-  ngOnInit(): void {
-    this.activatedRoute.data.subscribe({
-      next: (data) => {
-        console.log(data)
-      }
-    })
-  }
 }
 
 export const resolveUserName: ResolveFn<string> = (
